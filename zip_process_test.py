@@ -27,7 +27,7 @@ file_name = input("Name of file which you want to change: ")
 what_to_change = input("Text, which you want to change: ")
 replacement = input("Change text to this: ")
 try:
-    # 'text.zip' -> 'text.txt' -> 'cats' -> 'dogs'
+    # 'text.zip' -> 'text.txt' -> 'dogs' -> 'cats'
     ZipReplace(archive_name, file_name, what_to_change, replacement).zip_find_replace()
     print("Successfully changed.")
 except Exception:
