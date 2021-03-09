@@ -20,6 +20,7 @@ class ScaleZip:
         self.temp_directory = Path("unzipped-{}".format(
                 zipname[:-4]))
 
+
     def process_zip(self):
         """
         Main method which uses the rest.
@@ -29,6 +30,7 @@ class ScaleZip:
         self.process_files()
         self.zip_files()
 
+
     def unzip_files(self):
         """
         Extracts files from archive.
@@ -36,6 +38,7 @@ class ScaleZip:
         self.temp_directory.mkdir()
         with zipfile.ZipFile(self.zipname) as zip:
             zip.extractall(str(self.temp_directory))
+
 
     def zip_files(self):
         """
@@ -45,6 +48,7 @@ class ScaleZip:
             for filename in self.temp_directory.iterdir():
                 file.write(str(filename), filename.name)
         shutil.rmtree(str(self.temp_directory))
+
 
     def process_files(self):
         '''

@@ -42,13 +42,3 @@ class ZipProcessor:
         for filename in os.listdir(self.temp_directory):
             file.write(self._full_filename(filename), filename)
         shutil.rmtree(self.temp_directory)
-
-
-    def process_zip(self):
-        """
-        Main method which uses the rest.
-        It extracts files from archive, works with them and puts them back.
-        """
-        self.unzip_files()
-        self.process_files()
-        self.zip_files()
